@@ -1,0 +1,29 @@
+source 'https://rubygems.org'
+
+ruby '2.1'
+
+# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+gem 'rails', '4.0.2'
+
+gem 'pg'
+
+# Use unicorn as the app server
+gem 'unicorn'
+
+# Use grape for API
+gem 'grape'
+
+gem 'dotenv-rails', groups: [:development, :test]
+
+gem 'pry', groups: [:development, :test]
+gem 'pry-nav', groups: [:development, :test]
+
+gem 'present', github: 'coderly/present'
+
+group :production do
+	gem 'rails_12factor'
+end
+
+group :development do
+	gem 'rspec-rails'
+end
