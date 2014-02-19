@@ -1,9 +1,12 @@
 source 'https://rubygems.org'
 
-ruby '2.1'
+ruby '2.1.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.2'
+gem 'jquery-rails'
+gem 'turbolinks'
+gem 'uglifier'
 
 gem 'pg'
 
@@ -12,13 +15,18 @@ gem 'unicorn'
 
 # Use grape for API
 gem 'grape'
-
-gem 'dotenv-rails', groups: [:development, :test]
-
-gem 'pry', groups: [:development, :test]
-gem 'pry-nav', groups: [:development, :test]
+gem 'grape-swagger'
 
 gem 'present', github: 'coderly/present'
+
+group :development, :test do
+	gem 'pry'
+	gem 'pry-nav'
+
+	gem 'dotenv-rails', groups: [:development, :test]
+
+  gem 'rspec-rails', '~> 3.0.0.beta'
+end
 
 group :production do
 	gem 'rails_12factor'

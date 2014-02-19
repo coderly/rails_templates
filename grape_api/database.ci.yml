@@ -1,0 +1,20 @@
+test:
+  adapter: postgresql
+  host: 127.0.0.1
+  encoding: unicode
+  database: circle_test
+  username: ubuntu
+  password:
+  pool: 5
+
+# For PostGIS use the following:
+#
+# test:
+#   adapter: postgis
+#   host: 127.0.0.1
+#   encoding: unicode
+#   database: circle_test
+#   username: ubuntu
+#   password:
+#   postgis_extension: true
+#   pool: 5

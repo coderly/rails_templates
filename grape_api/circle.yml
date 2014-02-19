@@ -1,0 +1,15 @@
+database:
+  override:
+    - mv config/database.ci.yml config/database.yml
+    - bundle exec rake db:schema:load --trace
+deployment:
+  staging:
+    branch: development
+    commands:
+      - git push git@heroku.com:product-name-staging.git $CIRCLE_SHA1:master
+      - heroku run rake db:migrate --app app-name-development
+  production:
+    branch: master
+    commands:
+      - git push git@heroku.com:product-name-production.git $CIRCLE_SHA1:master
+      - heroku run rake db:migrate --app app-name-production
